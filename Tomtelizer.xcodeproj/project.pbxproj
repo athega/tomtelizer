@@ -49,6 +49,7 @@
 		6BC3FE07148F9A4A004A8EC2 /* MultipartRequestBuilderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC3FE00148F9A4A004A8EC2 /* MultipartRequestBuilderTest.m */; };
 		6BC3FE08148F9A4A004A8EC2 /* PerodicalImageLoaderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC3FE02148F9A4A004A8EC2 /* PerodicalImageLoaderTest.m */; };
 		6BC3FE09148F9A4A004A8EC2 /* XmlParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC3FE04148F9A4A004A8EC2 /* XmlParserTest.m */; };
+		6BE0D0EC148FA4E4000C0DAD /* thumb-1322222655-11572.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BE0D0EB148FA4E4000C0DAD /* thumb-1322222655-11572.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,7 @@
 		6BC3FE02148F9A4A004A8EC2 /* PerodicalImageLoaderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerodicalImageLoaderTest.m; sourceTree = "<group>"; };
 		6BC3FE03148F9A4A004A8EC2 /* XmlParserTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XmlParserTest.h; sourceTree = "<group>"; };
 		6BC3FE04148F9A4A004A8EC2 /* XmlParserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XmlParserTest.m; sourceTree = "<group>"; };
+		6BE0D0EB148FA4E4000C0DAD /* thumb-1322222655-11572.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb-1322222655-11572.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,8 +202,6 @@
 		6BC3FD85148F9721004A8EC2 /* Tomtelizer */ = {
 			isa = PBXGroup;
 			children = (
-				6BC3FDAE148F9813004A8EC2 /* 90deg.jpg */,
-				6BC3FDAF148F9813004A8EC2 /* athega_logo.png */,
 				6BC3FDB0148F9813004A8EC2 /* AthegaPostFile.h */,
 				6BC3FDB1148F9813004A8EC2 /* AthegaPostFile.m */,
 				6BC3FDB2148F9813004A8EC2 /* AthegaPostParam.h */,
@@ -210,17 +210,12 @@
 				6BC3FDB5148F9813004A8EC2 /* Constants.m */,
 				6BC3FDB6148F9813004A8EC2 /* FeatureFinder.h */,
 				6BC3FDB7148F9813004A8EC2 /* FeatureFinder.m */,
-				6BC3FDB8148F9814004A8EC2 /* front-big.jpg */,
-				6BC3FDB9148F9814004A8EC2 /* front.jpg */,
-				6BC3FDBA148F9814004A8EC2 /* glyphicons_011_camera.png */,
-				6BC3FDBB148F9814004A8EC2 /* glyphicons_155_show_thumbnails.png */,
 				6BC3FDBC148F9814004A8EC2 /* HttpBrowser.h */,
 				6BC3FDBD148F9814004A8EC2 /* HttpBrowser.m */,
 				6BC3FDBE148F9814004A8EC2 /* ImageHelpers.h */,
 				6BC3FDBF148F9814004A8EC2 /* ImageHelpers.m */,
 				6BC3FDC0148F9814004A8EC2 /* ImageLoader.h */,
 				6BC3FDC1148F9814004A8EC2 /* ImageLoader.m */,
-				6BC3FDC2148F9814004A8EC2 /* latest.xml */,
 				6BC3FDC3148F9814004A8EC2 /* MultipartRequestBuilder.h */,
 				6BC3FDC4148F9814004A8EC2 /* MultipartRequestBuilder.m */,
 				6BC3FDC5148F9814004A8EC2 /* PerodicalImageLoader.h */,
@@ -249,6 +244,14 @@
 		6BC3FD86148F9721004A8EC2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6BE0D0EB148FA4E4000C0DAD /* thumb-1322222655-11572.jpg */,
+				6BC3FDAE148F9813004A8EC2 /* 90deg.jpg */,
+				6BC3FDAF148F9813004A8EC2 /* athega_logo.png */,
+				6BC3FDB8148F9814004A8EC2 /* front-big.jpg */,
+				6BC3FDB9148F9814004A8EC2 /* front.jpg */,
+				6BC3FDBA148F9814004A8EC2 /* glyphicons_011_camera.png */,
+				6BC3FDBB148F9814004A8EC2 /* glyphicons_155_show_thumbnails.png */,
+				6BC3FDC2148F9814004A8EC2 /* latest.xml */,
 				6BC3FD87148F9721004A8EC2 /* Tomtelizer-Info.plist */,
 				6BC3FD88148F9721004A8EC2 /* InfoPlist.strings */,
 				6BC3FD8B148F9721004A8EC2 /* main.m */,
@@ -395,6 +398,7 @@
 				6BC3FDDE148F9814004A8EC2 /* glyphicons_155_show_thumbnails.png in Resources */,
 				6BC3FDE2148F9814004A8EC2 /* latest.xml in Resources */,
 				6B3FDC85148FA04000B9CBD0 /* MainStoryboard.storyboard in Resources */,
+				6BE0D0EC148FA4E4000C0DAD /* thumb-1322222655-11572.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
