@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C74" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="6QG-mC-mhs">
+    <dependencies>
+        <development defaultVersion="4200" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+    </dependencies>
+    <scenes>
+        <scene sceneID="iK4-n8-Wwb">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9zZ-ru-pu8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="gtN-mc-9GF" customClass="XmasHatViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="149" sectionHeaderHeight="22" sectionFooterHeight="22" id="aXW-RG-rlc">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <color key="separatorColor" red="0.27717391304347827" green="0.27717391304347827" blue="0.27717391304347827" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="XmasHatCell" rowHeight="149" id="GIA-Za-h4i" customClass="XmasHatCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="149"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="148"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" id="hc8-5G-ji7">
+                                            <rect key="frame" x="0.0" y="0.0" width="149" height="149"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <outlet property="xmasHatImageView" destination="hc8-5G-ji7" id="oFb-uQ-t0v"/>
+                                    <segue destination="SyZ-ga-lej" kind="push" identifier="ViewBigImage" id="bh2-nG-1W5"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gtN-mc-9GF" id="Ptd-xe-uvz"/>
+                            <outlet property="delegate" destination="gtN-mc-9GF" id="LPU-fc-6gK"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="xSa-Di-2qa"/>
+                    <connections>
+                        <outlet property="tableView" destination="aXW-RG-rlc" id="xXc-6p-7lQ"/>
+                    </connections>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="-111" y="-226"/>
+        </scene>
+        <scene sceneID="Ffe-EH-AFJ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vqq-j0-kNl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="SyZ-ga-lej" customClass="XmasHatDetailsController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ShI-fb-jd3">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="whiteLarge" id="Yk5-zT-eGn">
+                                <rect key="frame" x="142" y="177" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="tch-OM-GD2">
+                                <rect key="frame" x="0.0" y="-25" width="320" height="393"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FXW-sB-SL6"/>
+                    <connections>
+                        <outlet property="imageView" destination="tch-OM-GD2" id="dCU-7y-fsj"/>
+                        <outlet property="progressIndicator" destination="Yk5-zT-eGn" id="dfy-IH-hcY"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="398" y="-226"/>
+        </scene>
+        <scene sceneID="LNf-jC-fkm">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tOz-m2-J0Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="gCT-l2-Ejz" customClass="XmasHatTakePictureController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ekg-F5-bra">
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="xUc-P6-rpI">
+                                <rect key="frame" x="20" y="191" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="With Hat"/>
+                                    <segment title="Without Hat"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" id="Yxb-N5-RNK">
+                                <rect key="frame" x="147" y="231" width="29" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="gCT-l2-Ejz" eventType="touchUpInside" id="bnK-rN-saH"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="whiteLarge" id="X0S-Sk-XwX">
+                                <rect key="frame" x="143" y="266" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Tomtelize!" image="glyphicons_011_camera.png" id="TSP-Qk-nLv"/>
+                    <connections>
+                        <outlet property="hatModeSegmentedCtrl" destination="xUc-P6-rpI" id="WBB-x7-fW7"/>
+                        <outlet property="progressIndicator" destination="X0S-Sk-XwX" id="Y2D-Jo-rNf"/>
+                        <outlet property="takePictureButton" destination="Yxb-N5-RNK" id="jRP-rK-mum"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-585" y="449"/>
+        </scene>
+        <scene sceneID="icR-4g-02T">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GCc-99-Ieh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController definesPresentationContext="YES" id="6QG-mC-mhs" sceneMemberID="viewController">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="MSA-jP-HLt">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="jFK-wY-lUt" kind="relationship" relationship="viewControllers" id="q9i-zC-dGc"/>
+                        <segue destination="gCT-l2-Ejz" kind="relationship" relationship="viewControllers" id="OYK-Nd-qW5"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="-1129" y="77"/>
+        </scene>
+        <scene sceneID="bgN-bQ-Z6l">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xxl-Ww-Jax" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="jFK-wY-lUt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Recent" image="glyphicons_155_show_thumbnails.png" id="vMX-uO-0iW"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ev5-qu-ejN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gtN-mc-9GF" kind="relationship" relationship="rootViewController" id="cRv-5S-hVe"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-585" y="-226"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="glyphicons_011_camera.png" width="26" height="20"/>
+        <image name="glyphicons_155_show_thumbnails.png" width="22" height="22"/>
+    </resources>
+    <classes>
+        <class className="XmasHatCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/XmasHatCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="xmasHatImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="XmasHatDetailsController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/XmasHatDetailsController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="progressIndicator" candidateClass="UIActivityIndicatorView"/>
+            </relationships>
+        </class>
+        <class className="XmasHatTakePictureController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/XmasHatTakePictureController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="hatModeSegmentedCtrl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="progressIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="takePictureButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="XmasHatViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/XmasHatViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

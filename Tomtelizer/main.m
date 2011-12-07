@@ -1,8 +1,8 @@
 //
 //  main.m
-//  Tomtelizer
+//  BrowseTomteImages
 //
-//  Created by Petter Petersson on 12/7/11.
+//  Created by Petter Petersson on 12/1/11.
 //  Copyright (c) 2011 Athega AB. All rights reserved.
 //
 

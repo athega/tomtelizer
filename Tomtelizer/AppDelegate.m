@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  Tomtelizer
+//  BrowseTomteImages
 //
-//  Created by Petter Petersson on 12/7/11.
+//  Created by Petter Petersson on 12/1/11.
 //  Copyright (c) 2011 Athega AB. All rights reserved.
 //
 
@@ -14,13 +14,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
     return YES;
 }
-
+							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     /*
