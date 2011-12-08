@@ -32,6 +32,22 @@
 - (IBAction) buttonPressed:(id)sender {
     
     if(![browser isWorking]){
+        
+        UIImagePickerController * picker = [[UIImagePickerController alloc] init];
+        picker.delegate = self;
+        
+        if([UIImagePickerController isSourceTypeAvailable:(UIImagePickerControllerSourceTypeCamera)]){
+            picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        } else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No camera found!" 
+                                                            message:@"Image picker is not supported" /* we need camera meta data */
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK" 
+                                                  otherButtonTitles:nil];
+            [alert show];
+            return;
+        }
+        
         takePictureButton.enabled = NO;
         hatModeSegmentedCtrl.enabled = NO;
         progressIndicator.hidden = NO;
@@ -47,15 +63,7 @@
                 processFeatureData = NO;
                 break;
         }
-        UIImagePickerController * picker = [[UIImagePickerController alloc] init];
-        picker.delegate = self;
         
-        if([UIImagePickerController isSourceTypeAvailable:(UIImagePickerControllerSourceTypeCamera)]){
-            picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        } else {
-            //TODO: remove this since it craches the application to not receive camera meta data
-            picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        }
         [self presentModalViewController:picker animated:YES];
     } else {
         NSLog(@"browser is working - ignoring buttonPressed...");
