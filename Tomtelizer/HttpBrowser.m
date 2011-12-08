@@ -67,9 +67,6 @@ int const NUM_SLEEP_SECONDS = 5;
     
     UIImage* scaled = [image scaleToSize: newSize];
     
-    //NSLog(@"%@", info);
-    //TODO: RENAME THIS CLASS...
-
     NSArray * features = [featureFinder getFeaturesFromImage: scaled];
  
     NSData* imagedata = UIImageJPEGRepresentation(scaled, 1.0);
@@ -147,13 +144,15 @@ int const NUM_SLEEP_SECONDS = 5;
     NSData * data = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:&error];
 
     NSLog(@"%@", error);
-    //NSLog(@"%@", response);
-    
-    NSString *body = [NSString stringWithCString:[data bytes] encoding:NSUTF8StringEncoding];
-    //NSLog(@"%@", body);
     
     isWorking=NO;
-    [self.delegate browser:self didReceiveBody:body];
+    
+    if(data){
+        NSString *body = [NSString stringWithCString:[data bytes] encoding:NSUTF8StringEncoding];
+        [self.delegate browser:self didReceiveBody:body];
+    } else {
+        [self.delegate failedToSendData];
+    }
 }
 
 

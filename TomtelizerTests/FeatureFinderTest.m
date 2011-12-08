@@ -37,7 +37,7 @@ typedef void (^AssetGroupEnumerator)(ALAssetsGroup *group, BOOL *stop);
     //only one feature expected
     NSDictionary *res = [result objectAtIndex:0];
 
-    //THESE fails on the phone and works in the simulator... sigh
+    //IMPORTANT: These asserts will fail on the phone (by a odd pixel value) but work in the simulator
     STAssertEqualObjects([NSNumber numberWithInt: 199] , [res valueForKey:@"leftEyePositionX"], nil);
     STAssertEqualObjects([NSNumber numberWithInt: 395] , [res valueForKey:@"leftEyePositionY"], nil);
     STAssertEqualObjects([NSNumber numberWithInt: 246] , [res valueForKey:@"mouthPositionX"], nil);

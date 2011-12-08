@@ -53,6 +53,7 @@
         if([UIImagePickerController isSourceTypeAvailable:(UIImagePickerControllerSourceTypeCamera)]){
             picker.sourceType = UIImagePickerControllerSourceTypeCamera;
         } else {
+            //TODO: remove this since it craches the application to not receive camera meta data
             picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
         }
         [self presentModalViewController:picker animated:YES];
@@ -69,6 +70,20 @@
     hatModeSegmentedCtrl.enabled = YES;
     [progressIndicator stopAnimating];
     progressIndicator.hidden = YES;
+}
+
+- (void)failedToSendData {
+    takePictureButton.enabled = YES;
+    hatModeSegmentedCtrl.enabled = YES;
+    [progressIndicator stopAnimating];
+    progressIndicator.hidden = YES;
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Server error" 
+                                                    message:[@"Failed to send data to host " stringByAppendingString: ServerHost]
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK" 
+                                          otherButtonTitles:nil];
+    [alert show];
+
 }
 
 #pragma mark - UIImagePickerControllerDelegate

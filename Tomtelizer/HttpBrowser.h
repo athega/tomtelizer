@@ -16,6 +16,7 @@ extern int const NUM_SLEEP_SECONDS;
 @protocol HttpBrowserDelegate <NSObject>
 
 - (void)browser: (HttpBrowser *)browser didReceiveBody: (NSString *)body;
+- (void)failedToSendData;
 
 @end
 

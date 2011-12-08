@@ -53,6 +53,7 @@
     NSURLResponse * response = nil;
     NSError * error = nil;
     NSData * data =  [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:&error];
+    
     return [UIImage imageWithData:data];
 }
 

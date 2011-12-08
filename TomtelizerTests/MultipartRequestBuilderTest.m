@@ -50,11 +50,11 @@
     
     NSLog(@"[urlRequest HTTPBody]: %@", [urlRequest HTTPBody] );
     
-    //why the F**K will this fail *sometimes* ??
+    
     NSString *body = [NSString stringWithCString:[[urlRequest HTTPBody] bytes] encoding:NSUTF8StringEncoding];
     STAssertNotNil(body, @"expected a request body");
     
-    
+    //heisenbug warning - these will fail *sometimes*(!)
     STAssertTrue([body rangeOfString: data1].length > 0, @"expected to find data in request body");
     STAssertTrue([body rangeOfString: data2].length > 0, @"expected to find data in request body");
     STAssertTrue([body rangeOfString: @"myFile1"].length > 0, @"expected to find field value");

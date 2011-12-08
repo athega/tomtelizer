@@ -60,7 +60,7 @@
     [postData appendData: [[NSString stringWithFormat:@"--%@--\r\n", MPR_BOUNDARY] dataUsingEncoding:NSUTF8StringEncoding]];
     
     NSLog(@"BYTES len: %d", [postData length]);
-    //sometimes this converting bytes to string results in nil even though we always have the same bytes...wtf
+    //see test case - this will *occationally* return nil on identical data
     NSLog(@"%@",[NSString stringWithCString: [postData bytes] encoding: NSUTF8StringEncoding]);
     
     

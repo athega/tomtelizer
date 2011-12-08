@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6B3FDC85148FA04000B9CBD0 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B3FDC84148FA04000B9CBD0 /* MainStoryboard.storyboard */; };
+		6B50C01C148FBA16001549E4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B50C01B148FBA16001549E4 /* icon.png */; };
 		6BC3FD80148F9721004A8EC2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC3FD7F148F9721004A8EC2 /* UIKit.framework */; };
 		6BC3FD82148F9721004A8EC2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC3FD81148F9721004A8EC2 /* Foundation.framework */; };
 		6BC3FD84148F9721004A8EC2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC3FD83148F9721004A8EC2 /* CoreGraphics.framework */; };
@@ -34,7 +35,6 @@
 		6BC3FDE2148F9814004A8EC2 /* latest.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6BC3FDC2148F9814004A8EC2 /* latest.xml */; };
 		6BC3FDE3148F9814004A8EC2 /* MultipartRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC3FDC4148F9814004A8EC2 /* MultipartRequestBuilder.m */; };
 		6BC3FDE4148F9814004A8EC2 /* PerodicalImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC3FDC6148F9814004A8EC2 /* PerodicalImageLoader.m */; };
-		6BC3FDE5148F9814004A8EC2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC3FDC8148F9814004A8EC2 /* ViewController.m */; };
 		6BC3FDE6148F9814004A8EC2 /* XmasHat.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC3FDCA148F9814004A8EC2 /* XmasHat.m */; };
 		6BC3FDE7148F9814004A8EC2 /* XmasHatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC3FDCC148F9814004A8EC2 /* XmasHatCell.m */; };
 		6BC3FDE8148F9814004A8EC2 /* XmasHatDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC3FDCE148F9814004A8EC2 /* XmasHatDetailsController.m */; };
@@ -47,7 +47,6 @@
 		6BC3FE05148F9A4A004A8EC2 /* FeatureFinderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC3FDFC148F9A4A004A8EC2 /* FeatureFinderTest.m */; };
 		6BC3FE06148F9A4A004A8EC2 /* ImageLoaderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC3FDFE148F9A4A004A8EC2 /* ImageLoaderTest.m */; };
 		6BC3FE07148F9A4A004A8EC2 /* MultipartRequestBuilderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC3FE00148F9A4A004A8EC2 /* MultipartRequestBuilderTest.m */; };
-		6BC3FE08148F9A4A004A8EC2 /* PerodicalImageLoaderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC3FE02148F9A4A004A8EC2 /* PerodicalImageLoaderTest.m */; };
 		6BC3FE09148F9A4A004A8EC2 /* XmlParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC3FE04148F9A4A004A8EC2 /* XmlParserTest.m */; };
 		6BE0D0EC148FA4E4000C0DAD /* thumb-1322222655-11572.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BE0D0EB148FA4E4000C0DAD /* thumb-1322222655-11572.jpg */; };
 /* End PBXBuildFile section */
@@ -64,6 +63,7 @@
 
 /* Begin PBXFileReference section */
 		6B3FDC84148FA04000B9CBD0 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		6B50C01B148FBA16001549E4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		6BC3FD7B148F9721004A8EC2 /* Tomtelizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tomtelizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BC3FD7F148F9721004A8EC2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6BC3FD81148F9721004A8EC2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -103,8 +103,6 @@
 		6BC3FDC4148F9814004A8EC2 /* MultipartRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipartRequestBuilder.m; sourceTree = "<group>"; };
 		6BC3FDC5148F9814004A8EC2 /* PerodicalImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerodicalImageLoader.h; sourceTree = "<group>"; };
 		6BC3FDC6148F9814004A8EC2 /* PerodicalImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerodicalImageLoader.m; sourceTree = "<group>"; };
-		6BC3FDC7148F9814004A8EC2 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6BC3FDC8148F9814004A8EC2 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6BC3FDC9148F9814004A8EC2 /* XmasHat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XmasHat.h; sourceTree = "<group>"; };
 		6BC3FDCA148F9814004A8EC2 /* XmasHat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XmasHat.m; sourceTree = "<group>"; };
 		6BC3FDCB148F9814004A8EC2 /* XmasHatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XmasHatCell.h; sourceTree = "<group>"; };
@@ -132,8 +130,6 @@
 		6BC3FDFE148F9A4A004A8EC2 /* ImageLoaderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLoaderTest.m; sourceTree = "<group>"; };
 		6BC3FDFF148F9A4A004A8EC2 /* MultipartRequestBuilderTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipartRequestBuilderTest.h; sourceTree = "<group>"; };
 		6BC3FE00148F9A4A004A8EC2 /* MultipartRequestBuilderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipartRequestBuilderTest.m; sourceTree = "<group>"; };
-		6BC3FE01148F9A4A004A8EC2 /* PerodicalImageLoaderTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerodicalImageLoaderTest.h; sourceTree = "<group>"; };
-		6BC3FE02148F9A4A004A8EC2 /* PerodicalImageLoaderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerodicalImageLoaderTest.m; sourceTree = "<group>"; };
 		6BC3FE03148F9A4A004A8EC2 /* XmlParserTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XmlParserTest.h; sourceTree = "<group>"; };
 		6BC3FE04148F9A4A004A8EC2 /* XmlParserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XmlParserTest.m; sourceTree = "<group>"; };
 		6BE0D0EB148FA4E4000C0DAD /* thumb-1322222655-11572.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb-1322222655-11572.jpg"; sourceTree = "<group>"; };
@@ -220,8 +216,6 @@
 				6BC3FDC4148F9814004A8EC2 /* MultipartRequestBuilder.m */,
 				6BC3FDC5148F9814004A8EC2 /* PerodicalImageLoader.h */,
 				6BC3FDC6148F9814004A8EC2 /* PerodicalImageLoader.m */,
-				6BC3FDC7148F9814004A8EC2 /* ViewController.h */,
-				6BC3FDC8148F9814004A8EC2 /* ViewController.m */,
 				6BC3FDC9148F9814004A8EC2 /* XmasHat.h */,
 				6BC3FDCA148F9814004A8EC2 /* XmasHat.m */,
 				6BC3FDCB148F9814004A8EC2 /* XmasHatCell.h */,
@@ -244,6 +238,7 @@
 		6BC3FD86148F9721004A8EC2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6B50C01B148FBA16001549E4 /* icon.png */,
 				6BE0D0EB148FA4E4000C0DAD /* thumb-1322222655-11572.jpg */,
 				6BC3FDAE148F9813004A8EC2 /* 90deg.jpg */,
 				6BC3FDAF148F9813004A8EC2 /* athega_logo.png */,
@@ -270,8 +265,6 @@
 				6BC3FDFE148F9A4A004A8EC2 /* ImageLoaderTest.m */,
 				6BC3FDFF148F9A4A004A8EC2 /* MultipartRequestBuilderTest.h */,
 				6BC3FE00148F9A4A004A8EC2 /* MultipartRequestBuilderTest.m */,
-				6BC3FE01148F9A4A004A8EC2 /* PerodicalImageLoaderTest.h */,
-				6BC3FE02148F9A4A004A8EC2 /* PerodicalImageLoaderTest.m */,
 				6BC3FE03148F9A4A004A8EC2 /* XmlParserTest.h */,
 				6BC3FE04148F9A4A004A8EC2 /* XmlParserTest.m */,
 				6BC3FD9E148F9721004A8EC2 /* Supporting Files */,
@@ -399,6 +392,7 @@
 				6BC3FDE2148F9814004A8EC2 /* latest.xml in Resources */,
 				6B3FDC85148FA04000B9CBD0 /* MainStoryboard.storyboard in Resources */,
 				6BE0D0EC148FA4E4000C0DAD /* thumb-1322222655-11572.jpg in Resources */,
+				6B50C01C148FBA16001549E4 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,7 +438,6 @@
 				6BC3FDE1148F9814004A8EC2 /* ImageLoader.m in Sources */,
 				6BC3FDE3148F9814004A8EC2 /* MultipartRequestBuilder.m in Sources */,
 				6BC3FDE4148F9814004A8EC2 /* PerodicalImageLoader.m in Sources */,
-				6BC3FDE5148F9814004A8EC2 /* ViewController.m in Sources */,
 				6BC3FDE6148F9814004A8EC2 /* XmasHat.m in Sources */,
 				6BC3FDE7148F9814004A8EC2 /* XmasHatCell.m in Sources */,
 				6BC3FDE8148F9814004A8EC2 /* XmasHatDetailsController.m in Sources */,
@@ -461,7 +454,6 @@
 				6BC3FE05148F9A4A004A8EC2 /* FeatureFinderTest.m in Sources */,
 				6BC3FE06148F9A4A004A8EC2 /* ImageLoaderTest.m in Sources */,
 				6BC3FE07148F9A4A004A8EC2 /* MultipartRequestBuilderTest.m in Sources */,
-				6BC3FE08148F9A4A004A8EC2 /* PerodicalImageLoaderTest.m in Sources */,
 				6BC3FE09148F9A4A004A8EC2 /* XmlParserTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -27,7 +27,6 @@
     [super tearDown];
 }
 
-//TODO: this requires backend server to be running!
 - (void)testLoadImages
 {
 
@@ -71,14 +70,6 @@
                          hat.imageName, @"expected an url to big image in dto");
     STAssertNotNil(hat.image, @"expected a loaded image");
     //
-}
-
-//TODO: remove
-- (void)testOCMockPass {
-    id mock = [OCMockObject mockForClass:NSString.class];
-    [[[mock stub] andReturn:@"mocktest"] lowercaseString];
-    NSString *returnValue = [mock lowercaseString];
-    STAssertEqualObjects(@"mocktest", returnValue, @"Should have returned the expected string.");
 }
 
 
