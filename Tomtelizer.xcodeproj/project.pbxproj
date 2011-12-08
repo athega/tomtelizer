@@ -49,6 +49,7 @@
 		6BF8A6751490CC9A000EA995 /* front.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF8A6711490CC9A000EA995 /* front.jpg */; };
 		6BF8A6761490CC9A000EA995 /* thumb-1322222655-11572.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF8A6721490CC9A000EA995 /* thumb-1322222655-11572.jpg */; };
 		6BF8A6781490CDFA000EA995 /* latest.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6BF8A6771490CDFA000EA995 /* latest.xml */; };
+		6BF8A67A1491096F000EA995 /* iPadStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BF8A6791491096F000EA995 /* iPadStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		6BF8A6711490CC9A000EA995 /* front.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = front.jpg; sourceTree = "<group>"; };
 		6BF8A6721490CC9A000EA995 /* thumb-1322222655-11572.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumb-1322222655-11572.jpg"; sourceTree = "<group>"; };
 		6BF8A6771490CDFA000EA995 /* latest.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = latest.xml; sourceTree = "<group>"; };
+		6BF8A6791491096F000EA995 /* iPadStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPadStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +249,7 @@
 				6BC3FD8B148F9721004A8EC2 /* main.m */,
 				6BC3FD8D148F9721004A8EC2 /* Tomtelizer-Prefix.pch */,
 				6B3FDC84148FA04000B9CBD0 /* MainStoryboard.storyboard */,
+				6BF8A6791491096F000EA995 /* iPadStoryboard.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				6BC3FDDE148F9814004A8EC2 /* glyphicons_155_show_thumbnails.png in Resources */,
 				6B3FDC85148FA04000B9CBD0 /* MainStoryboard.storyboard in Resources */,
 				6B50C01C148FBA16001549E4 /* icon.png in Resources */,
+				6BF8A67A1491096F000EA995 /* iPadStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,7 +543,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tomtelizer/Tomtelizer-Prefix.pch";
 				INFOPLIST_FILE = "Tomtelizer/Tomtelizer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -550,7 +556,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tomtelizer/Tomtelizer-Prefix.pch";
 				INFOPLIST_FILE = "Tomtelizer/Tomtelizer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
