@@ -8,9 +8,14 @@
 
 #import "XmasHatTakePictureController.h"
 
-@implementation XmasHatTakePictureController 
+@interface XmasHatTakePictureController()
+- (void) enableCtrls;
+- (void) disableCtrls;
+@end
 
-@synthesize hatModeSegmentedCtrl, takePictureButton, progressIndicator;
+@implementation XmasHatTakePictureController
+
+@synthesize hatModeSegmentedCtrl, takePictureButton, progressIndicator, iPadPopoverController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +32,21 @@
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
+}
+
+
+- (void) enableCtrls {
+    takePictureButton.enabled = YES;
+    hatModeSegmentedCtrl.enabled = YES;
+    progressIndicator.hidden = YES;
+    [progressIndicator stopAnimating];
+    
+}
+- (void) disableCtrls {
+    takePictureButton.enabled = NO;
+    hatModeSegmentedCtrl.enabled = NO;
+    progressIndicator.hidden = NO;
+    [progressIndicator startAnimating];
 }
 
 - (IBAction) buttonPressed:(id)sender {
@@ -52,10 +72,7 @@
             picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
         }
         
-        takePictureButton.enabled = NO;
-        hatModeSegmentedCtrl.enabled = NO;
-        progressIndicator.hidden = NO;
-        [progressIndicator startAnimating];
+        [self disableCtrls];
         
         NSLog(@"%d", hatModeSegmentedCtrl.selectedSegmentIndex);
         switch (hatModeSegmentedCtrl.selectedSegmentIndex) {
@@ -68,27 +85,50 @@
                 break;
         }
         
-        [self presentModalViewController:picker animated:YES];
+        switch (UI_USER_INTERFACE_IDIOM()) {
+            case UIUserInterfaceIdiomPhone:
+                //
+                [self presentModalViewController:picker animated:YES];
+                break;
+            case UIUserInterfaceIdiomPad:
+                NSLog(@"We're an iPad - must wrap picker in a popover");
+                //TODO: wrap
+                iPadPopoverController = [[UIPopoverController alloc] initWithContentViewController:picker];
+                self.iPadPopoverController = iPadPopoverController;          
+                iPadPopoverController.delegate = self;
+                NSLog(@"presentPopoverFromBarButtonItem:");
+                CGRect r = CGRectMake(100, 100, 100, 100);
+                [iPadPopoverController presentPopoverFromRect:r inView: [self view] permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+            default:
+                break;
+        }
+        
     } else {
         NSLog(@"browser is working - ignoring buttonPressed...");
     }
 }
+
+#pragma mark - UIPopoverControllerDelegate REMOVE??
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
+    NSLog(@"popoverControllerDidDismissPopover");
+    [self.iPadPopoverController dismissPopoverAnimated:YES];
+    
+    [self enableCtrls];
+}
+
 #pragma mark - HttpBrowserDelegate
 
 - (void)browser: (HttpBrowser *)browser didReceiveBody: (NSString *)body {
     NSLog(@"browser: didReceiveBody:");
 
-    takePictureButton.enabled = YES;
-    hatModeSegmentedCtrl.enabled = YES;
-    [progressIndicator stopAnimating];
-    progressIndicator.hidden = YES;
+    [self enableCtrls];
 }
 
 - (void)failedToSendData {
-    takePictureButton.enabled = YES;
-    hatModeSegmentedCtrl.enabled = YES;
-    [progressIndicator stopAnimating];
-    progressIndicator.hidden = YES;
+    
+    [self enableCtrls];
+    
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Server error" 
                                                     message:[@"Failed to send data to host " stringByAppendingString: ServerHost]
                                                    delegate:nil
@@ -102,6 +142,8 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 
+    NSLog(@"imagePickerController:didFinishPickingMediaWithInfo:");
+    
     UIImage* image = [info objectForKey: @"UIImagePickerControllerOriginalImage"];
     
     NSMutableDictionary * params = [NSMutableDictionary dictionary];
@@ -116,16 +158,17 @@
     [browser sendImageDict: params toUrl: NewImageUrl];
 
     [picker dismissModalViewControllerAnimated:YES];
+    [self.iPadPopoverController dismissPopoverAnimated:YES];
     
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    NSLog(@"imagePickerControllerDidCancel");
+    
     [picker dismissModalViewControllerAnimated:YES];
+    [self.iPadPopoverController dismissPopoverAnimated:YES];
 
-    takePictureButton.enabled = YES;
-    hatModeSegmentedCtrl.enabled = YES;
-    progressIndicator.hidden = YES;
-    [progressIndicator stopAnimating];
+    [self enableCtrls];
 }
 
 #pragma mark - View lifecycle

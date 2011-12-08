@@ -12,13 +12,16 @@
 
 @interface XmasHatTakePictureController : UIViewController <UIImagePickerControllerDelegate, 
                                                             UINavigationControllerDelegate,
+                                                            UIPopoverControllerDelegate,
                                                             HttpBrowserDelegate> {
     BOOL processFeatureData;
     HttpBrowser *browser;
+    UIPopoverController *iPadPopoverController;
 }
 
 @property (nonatomic, retain) IBOutlet UISegmentedControl *hatModeSegmentedCtrl;
 @property (nonatomic, retain) IBOutlet UIButton *takePictureButton;
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView *progressIndicator;
+@property (nonatomic, retain) UIPopoverController *iPadPopoverController;
 
 @end
