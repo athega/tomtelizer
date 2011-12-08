@@ -84,16 +84,18 @@ int const NUM_SLEEP_SECONDS = 5;
     imageFile.fileName = @"image.jpg";
     imageFile.data = imagedata;
     
-    AthegaPostParam *orientation = [AthegaPostParam alloc];
-    orientation.key = @"orientation";
-    orientation.value = [NSString stringWithFormat:@"%@", [info objectForKey:@"Orientation"]];
+    NSMutableArray *params = [NSMutableArray array];
+    
+    if (info) {
+        AthegaPostParam *orientation = [AthegaPostParam alloc];
+        orientation.key = @"orientation";
+        orientation.value = [NSString stringWithFormat:@"%@", [info objectForKey:@"Orientation"]];
+        [params addObject:orientation];
+    }
     
     AthegaPostParam *processFeatures = [AthegaPostParam alloc];
     processFeatures.key = @"processFeatures";
     processFeatures.value = processFeaturesStr;
-    
-    NSMutableArray *params = [NSMutableArray array];
-    [params addObject:orientation];
     [params addObject:processFeatures];
     
     if ((int)[features count]>0){

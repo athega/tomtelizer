@@ -39,13 +39,17 @@
         if([UIImagePickerController isSourceTypeAvailable:(UIImagePickerControllerSourceTypeCamera)]){
             picker.sourceType = UIImagePickerControllerSourceTypeCamera;
         } else {
+            /* we need camera meta data */
+            /*
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No camera found!" 
-                                                            message:@"Image picker is not supported" /* we need camera meta data */
+                                                            message:@"Image picker is not supported" 
                                                            delegate:nil
                                                   cancelButtonTitle:@"OK" 
                                                   otherButtonTitles:nil];
             [alert show];
             return;
+            */
+            picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
         }
         
         takePictureButton.enabled = NO;
@@ -102,7 +106,11 @@
     
     NSMutableDictionary * params = [NSMutableDictionary dictionary];
     [params setObject:image forKey: @"image"];
-    [params setObject:[info objectForKey:@"UIImagePickerControllerMediaMetadata"] forKey: @"metadata"];
+    
+    NSDictionary * metaData = [info objectForKey:@"UIImagePickerControllerMediaMetadata"];
+    if(metaData){
+        [params setObject: metaData forKey: @"metadata"];
+    }
     [params setObject:(processFeatureData ? @"true" : @"false") forKey: @"processFeatures"];
     
     [browser sendImageDict: params toUrl: NewImageUrl];
