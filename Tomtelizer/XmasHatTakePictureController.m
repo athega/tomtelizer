@@ -97,8 +97,11 @@
                 self.iPadPopoverController = iPadPopoverController;          
                 iPadPopoverController.delegate = self;
                 NSLog(@"presentPopoverFromBarButtonItem:");
-                CGRect r = CGRectMake(100, 100, 100, 100);
-                [iPadPopoverController presentPopoverFromRect:r inView: [self view] permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+
+                [iPadPopoverController presentPopoverFromRect: takePictureButton.frame 
+                                                       inView: [self view] 
+                                     permittedArrowDirections: UIPopoverArrowDirectionAny 
+                                                     animated: YES];
             default:
                 break;
         }
@@ -129,11 +132,11 @@
     
     [self enableCtrls];
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Server error" 
-                                                    message:[@"Failed to send data to host " stringByAppendingString: ServerHost]
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK" 
-                                          otherButtonTitles:nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Server error" 
+                                                    message: [@"Failed to send data to host " stringByAppendingString: ServerHost]
+                                                   delegate: nil
+                                          cancelButtonTitle: @"OK" 
+                                          otherButtonTitles: nil];
     [alert show];
 
 }

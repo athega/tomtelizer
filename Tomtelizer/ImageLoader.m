@@ -27,12 +27,13 @@
 //TODO?: cache images
 -(NSMutableArray *) loadThumbnails:(NSArray *)listOfImages toImageArray:(NSMutableArray *) images {
     
-    for (NSString *imageName in listOfImages){
+    for (NSDictionary *elem in listOfImages){
         XmasHat *hat = [[XmasHat alloc] init];
 
-        hat.imageName = imageName;
+        hat.imageName = [elem objectForKey:@"filename"];
+        hat.checksum = [elem objectForKey:@"checksum"];
 
-        hat.image = [self loadImage: imageName];
+        hat.image = [self loadImage: hat.imageName withChecksum: hat.checksum];
         
         [images addObject:hat];
     }
@@ -40,15 +41,15 @@
     return images;
 }
 
-- (UIImage *) loadImage:(NSString *)imageName {
+- (UIImage *) loadImage:(NSString *)imageName withChecksum:(NSString *)checksum {
 
-    NSString * thumbnailUrl = [NSString stringWithFormat: @"%@%@/%@%@",host, uri,thumbPrefix, imageName];
+    NSString * thumbnailUrl = [NSString stringWithFormat: @"%@%@/%@%@?x=%@",host, uri,thumbPrefix, imageName, checksum];
     
     NSLog(@"THUMB - %@", thumbnailUrl);
     
-    NSURLRequest *req = [NSURLRequest requestWithURL:[NSURL URLWithString: thumbnailUrl]
-                                         cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                     timeoutInterval:60.0];
+    NSURLRequest *req = [NSURLRequest requestWithURL: [NSURL URLWithString: thumbnailUrl]
+                                         cachePolicy: NSURLRequestUseProtocolCachePolicy
+                                     timeoutInterval: 60.0];
     
     NSURLResponse * response = nil;
     NSError * error = nil;

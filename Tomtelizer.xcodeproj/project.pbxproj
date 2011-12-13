@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		6B3FDC85148FA04000B9CBD0 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B3FDC84148FA04000B9CBD0 /* MainStoryboard.storyboard */; };
 		6B50C01C148FBA16001549E4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B50C01B148FBA16001549E4 /* icon.png */; };
+		6BBC6AA8149755BA00B9F9CE /* 90deg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF8A66F1490CC9A000EA995 /* 90deg.jpg */; };
+		6BBC6AA9149755BA00B9F9CE /* front-big.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF8A6701490CC9A000EA995 /* front-big.jpg */; };
+		6BBC6AAA149755BA00B9F9CE /* front.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF8A6711490CC9A000EA995 /* front.jpg */; };
+		6BBC6AAB149755BA00B9F9CE /* thumb-1322222655-11572.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF8A6721490CC9A000EA995 /* thumb-1322222655-11572.jpg */; };
+		6BBC6AAD149755F100B9F9CE /* latest.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6BF8A6771490CDFA000EA995 /* latest.xml */; };
 		6BC3FD80148F9721004A8EC2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC3FD7F148F9721004A8EC2 /* UIKit.framework */; };
 		6BC3FD82148F9721004A8EC2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC3FD81148F9721004A8EC2 /* Foundation.framework */; };
 		6BC3FD84148F9721004A8EC2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC3FD83148F9721004A8EC2 /* CoreGraphics.framework */; };
@@ -385,6 +390,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BBC6AAD149755F100B9F9CE /* latest.xml in Resources */,
+				6BBC6AA8149755BA00B9F9CE /* 90deg.jpg in Resources */,
+				6BBC6AA9149755BA00B9F9CE /* front-big.jpg in Resources */,
+				6BBC6AAA149755BA00B9F9CE /* front.jpg in Resources */,
+				6BBC6AAB149755BA00B9F9CE /* thumb-1322222655-11572.jpg in Resources */,
 				6BC3FD8A148F9721004A8EC2 /* InfoPlist.strings in Resources */,
 				6BC3FDD6148F9814004A8EC2 /* athega_logo.png in Resources */,
 				6BC3FDDD148F9814004A8EC2 /* glyphicons_011_camera.png in Resources */,

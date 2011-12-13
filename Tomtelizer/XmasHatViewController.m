@@ -148,7 +148,8 @@
 	{
 		XmasHatDetailsController *xController = segue.destinationViewController;
 
-        xController.urlToBigImage = [NSString stringWithFormat: @"%@%@/%@%@", ServerHost, UploadedImagesPath, HatifiedImagePrefix, hat.imageName];
+        xController.urlToBigImage = [NSString stringWithFormat: @"%@%@/%@%@?x=%@", ServerHost, UploadedImagesPath, 
+                                     HatifiedImagePrefix, hat.imageName, hat.checksum];
         //[images reverse];
         [tableView reloadData];
 	}

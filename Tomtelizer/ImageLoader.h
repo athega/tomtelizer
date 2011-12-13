@@ -20,6 +20,6 @@
 
 -(NSMutableArray *) loadThumbnails:(NSArray *)listOfImages toImageArray:(NSMutableArray *) images;
 
-- (UIImage *) loadImage:(NSString *)imageName;
+- (UIImage *) loadImage:(NSString *)imageName withChecksum:(NSString *)checksum;
 
 @end

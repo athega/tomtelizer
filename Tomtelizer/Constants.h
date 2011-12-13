@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-#define SERVER_HOST @"http://10.0.0.85:3000"
+//#define SERVER_HOST @"http://10.0.0.85:3000"
+
+#define SERVER_HOST @"http://tomtelizer.athega.se"
 
 extern NSString * const ServerHost;
 

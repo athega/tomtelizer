@@ -10,7 +10,7 @@
 #import <OCMock/OCMock.h>
 
 @implementation ImageLoaderTest {
-    NSArray *thumbsToLoad;
+    NSMutableArray *thumbsToLoad;
 }
 
 - (void)setUp
@@ -30,7 +30,7 @@
 - (void)testLoadImages
 {
 
-    thumbsToLoad = [NSArray arrayWithObjects:
+    NSArray * thumbNames = [NSArray arrayWithObjects:
              @"1322151563-4162.jpg",
              @"1322222655-11572.jpg",
              @"1322213496-0385.jpg",
@@ -42,6 +42,17 @@
              @"1322219974-41516.jpg",
              nil];
     
+    thumbsToLoad = [NSMutableArray arrayWithCapacity:10];
+    
+    for (NSString *thumb in thumbNames){
+        NSDictionary *element = [NSDictionary dictionaryWithObjectsAndKeys:
+                                 thumb, @"filename",
+                                 @"some-checksum", @"checksum",
+                                 nil];
+        [thumbsToLoad addObject:element];
+    }
+    
+    
     ImageLoader *imageLoader = [[ImageLoader alloc] initWithHost: ServerHost 
                                                     thumbnailPrefix: @"thumb-"
                                                     imagePrefix: @"hatified-" 
@@ -51,7 +62,7 @@
     STAssertNotNil(testImage, @"expected a test image");
     
     id partialImageLoaderMock = [OCMockObject partialMockForObject:imageLoader];
-    [[[partialImageLoaderMock stub] andReturn:testImage] loadImage:[OCMArg any]];
+    [[[partialImageLoaderMock stub] andReturn:testImage] loadImage:[OCMArg any]withChecksum:[OCMArg any]];
 
     
     STAssertNotNil(imageLoader, @"expected an image loader");
@@ -68,6 +79,8 @@
     
     STAssertEqualObjects(@"1322151563-4162.jpg", 
                          hat.imageName, @"expected an url to big image in dto");
+    STAssertEqualObjects(@"some-checksum", 
+                         hat.checksum, @"expected checksum in dto");
     STAssertNotNil(hat.image, @"expected a loaded image");
     //
 }

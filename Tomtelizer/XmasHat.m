@@ -10,6 +10,6 @@
 
 @implementation XmasHat
 
-@synthesize image, imageName;
+@synthesize image, imageName, checksum;
 
 @end

@@ -23,7 +23,11 @@
     
     [parser loadThumbnailsFromXml:xmlURL toMutableArray: &arr];
     STAssertNotNil(arr, @"expected result from parsing xml");
-    STAssertEquals((NSUInteger)100, [arr count], @"expected elements in array");
+    STAssertEquals((NSUInteger)3, [arr count], @"expected 3 elements in array");
+    NSDictionary * obj = [arr objectAtIndex:0];
+    STAssertNotNil(obj, @"expected a object at index 0");
+    STAssertEqualObjects(@"1323767960-29511.jpg", [obj objectForKey:@"filename"], @"unexpected thumbnail name");
+    STAssertEqualObjects(@"862e12ae73818474f6d23438751528a7", [obj objectForKey:@"checksum"], @"unexpected checksum for file");
 }
 
 @end
