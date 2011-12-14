@@ -128,19 +128,19 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GCc-99-Ieh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController definesPresentationContext="YES" id="6QG-mC-mhs" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="MSA-jP-HLt">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="jFK-wY-lUt" kind="relationship" relationship="viewControllers" id="q9i-zC-dGc"/>
                         <segue destination="gCT-l2-Ejz" kind="relationship" relationship="viewControllers" id="OYK-Nd-qW5"/>
+                        <segue destination="jFK-wY-lUt" kind="relationship" relationship="viewControllers" id="q9i-zC-dGc"/>
                     </connections>
                 </tabBarController>
             </objects>
-            <point key="canvasLocation" x="-1129" y="77"/>
+            <point key="canvasLocation" x="-1115" y="89"/>
         </scene>
         <scene sceneID="bgN-bQ-Z6l">
             <objects>
