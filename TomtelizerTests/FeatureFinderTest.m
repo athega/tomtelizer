@@ -38,12 +38,12 @@ typedef void (^AssetGroupEnumerator)(ALAssetsGroup *group, BOOL *stop);
     NSDictionary *res = [result objectAtIndex:0];
 
     //IMPORTANT: These asserts will fail on the phone (by a odd pixel value) but work in the simulator
-    STAssertEqualObjects([NSNumber numberWithInt: 199] , [res valueForKey:@"leftEyePositionX"], nil);
-    STAssertEqualObjects([NSNumber numberWithInt: 395] , [res valueForKey:@"leftEyePositionY"], nil);
-    STAssertEqualObjects([NSNumber numberWithInt: 246] , [res valueForKey:@"mouthPositionX"], nil);
-    STAssertEqualObjects([NSNumber numberWithInt: 288] , [res valueForKey:@"mouthPositionY"], nil);
-    STAssertEqualObjects([NSNumber numberWithInt: 293] , [res valueForKey:@"rightEyePositionX"], nil);
-    STAssertEqualObjects([NSNumber numberWithInt: 386] , [res valueForKey:@"rightEyePositionY"], nil);
+    STAssertEqualObjects([NSNumber numberWithInt: 201] , [res valueForKey:@"leftEyePositionX"], nil);
+    STAssertEqualObjects([NSNumber numberWithInt: 396] , [res valueForKey:@"leftEyePositionY"], nil);
+    STAssertEqualObjects([NSNumber numberWithInt: 240] , [res valueForKey:@"mouthPositionX"], nil);
+    STAssertEqualObjects([NSNumber numberWithInt: 289] , [res valueForKey:@"mouthPositionY"], nil);
+    STAssertEqualObjects([NSNumber numberWithInt: 294] , [res valueForKey:@"rightEyePositionX"], nil);
+    STAssertEqualObjects([NSNumber numberWithInt: 384] , [res valueForKey:@"rightEyePositionY"], nil);
 }
 
 - (void)testVeryBigFeaturedImageFile
@@ -62,12 +62,12 @@ typedef void (^AssetGroupEnumerator)(ALAssetsGroup *group, BOOL *stop);
     //only one feature expected
     NSDictionary *res = [result objectAtIndex:0];
     
-    STAssertEquals(369 , [(NSNumber *)[res valueForKey:@"leftEyePositionX"] intValue], nil);
-    STAssertEquals(1288, [(NSNumber *)[res valueForKey:@"leftEyePositionY"] intValue], nil);
-    STAssertEquals(569 , [(NSNumber *)[res valueForKey:@"mouthPositionX"] intValue], nil);
-    STAssertEquals(868 , [(NSNumber *)[res valueForKey:@"mouthPositionY"] intValue], nil);
-    STAssertEquals(696 , [(NSNumber *)[res valueForKey:@"rightEyePositionX"] intValue], nil);
-    STAssertEquals(1323 , [(NSNumber *)[res valueForKey:@"rightEyePositionY"] intValue], nil);
+    STAssertEquals(374 , [(NSNumber *)[res valueForKey:@"leftEyePositionX"] intValue], nil);
+    STAssertEquals(1275, [(NSNumber *)[res valueForKey:@"leftEyePositionY"] intValue], nil);
+    STAssertEquals(554, [(NSNumber *)[res valueForKey:@"mouthPositionX"] intValue], nil);
+    STAssertEquals(918 , [(NSNumber *)[res valueForKey:@"mouthPositionY"] intValue], nil);
+    STAssertEquals(711 , [(NSNumber *)[res valueForKey:@"rightEyePositionX"] intValue], nil);
+    STAssertEquals(1280, [(NSNumber *)[res valueForKey:@"rightEyePositionY"] intValue], nil);
 }
 
 - (void)testReadNonFeaturedImageFile

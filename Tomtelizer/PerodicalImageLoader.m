@@ -20,6 +20,9 @@
     
     NSLog(@" %s",  self.isWorking ? "true" : "false");
 
+    NSLog(@"initializing images array");
+    images = [[NSMutableArray array] init];
+    
     if(!self.isWorking){
         
         NSLog(@"Starting thread...");
@@ -55,7 +58,7 @@
         parser = [XmlParser alloc];
         [parser loadThumbnailsFromXml:xmlURL toMutableArray: &thumbsToLoad];
         
-        images = [[NSMutableArray array] init];
+        
         images = [imageLoader loadThumbnails:thumbsToLoad toImageArray: images];
     
         

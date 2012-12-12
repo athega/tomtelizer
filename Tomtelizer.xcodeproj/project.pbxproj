@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6B3FDC85148FA04000B9CBD0 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B3FDC84148FA04000B9CBD0 /* MainStoryboard.storyboard */; };
 		6B50C01C148FBA16001549E4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B50C01B148FBA16001549E4 /* icon.png */; };
+		6B9B1CD2167889C000ED9DB4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9B1CD1167889C000ED9DB4 /* Default-568h@2x.png */; };
 		6BBC6AA8149755BA00B9F9CE /* 90deg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF8A66F1490CC9A000EA995 /* 90deg.jpg */; };
 		6BBC6AA9149755BA00B9F9CE /* front-big.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF8A6701490CC9A000EA995 /* front-big.jpg */; };
 		6BBC6AAA149755BA00B9F9CE /* front.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF8A6711490CC9A000EA995 /* front.jpg */; };
@@ -70,6 +71,7 @@
 /* Begin PBXFileReference section */
 		6B3FDC84148FA04000B9CBD0 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		6B50C01B148FBA16001549E4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		6B9B1CD1167889C000ED9DB4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6BC3FD7B148F9721004A8EC2 /* Tomtelizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tomtelizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BC3FD7F148F9721004A8EC2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6BC3FD81148F9721004A8EC2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -172,6 +174,7 @@
 		6BC3FD70148F9721004A8EC2 = {
 			isa = PBXGroup;
 			children = (
+				6B9B1CD1167889C000ED9DB4 /* Default-568h@2x.png */,
 				6BC3FD85148F9721004A8EC2 /* Tomtelizer */,
 				6BC3FD9D148F9721004A8EC2 /* TomtelizerTests */,
 				6BC3FD7E148F9721004A8EC2 /* Frameworks */,
@@ -402,6 +405,7 @@
 				6B3FDC85148FA04000B9CBD0 /* MainStoryboard.storyboard in Resources */,
 				6B50C01C148FBA16001549E4 /* icon.png in Resources */,
 				6BF8A67A1491096F000EA995 /* iPadStoryboard.storyboard in Resources */,
+				6B9B1CD2167889C000ED9DB4 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

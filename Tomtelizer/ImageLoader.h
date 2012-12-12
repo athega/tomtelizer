@@ -22,4 +22,6 @@
 
 - (UIImage *) loadImage:(NSString *)imageName withChecksum:(NSString *)checksum;
 
+- (BOOL) imageWithFilename: (NSString *)filename andChecksum: (NSString *)checksum isPresentInImageList: (NSMutableArray *)images;
+
 @end

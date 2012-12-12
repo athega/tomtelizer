@@ -26,16 +26,23 @@
 
 //TODO?: cache images
 -(NSMutableArray *) loadThumbnails:(NSArray *)listOfImages toImageArray:(NSMutableArray *) images {
-    
+
+    NSLog(@"images count: %d", [images count]);
     for (NSDictionary *elem in listOfImages){
-        XmasHat *hat = [[XmasHat alloc] init];
-
-        hat.imageName = [elem objectForKey:@"filename"];
-        hat.checksum = [elem objectForKey:@"checksum"];
-
-        hat.image = [self loadImage: hat.imageName withChecksum: hat.checksum];
         
-        [images addObject:hat];
+        NSString * filename = [elem objectForKey:@"filename"];
+        NSString * checksum = [elem objectForKey:@"checksum"];
+        
+        if(![self imageWithFilename: filename andChecksum: checksum isPresentInImageList: images]){
+            XmasHat *hat = [[XmasHat alloc] init];
+            
+            hat.imageName = filename;
+            hat.checksum =  checksum;
+            
+            hat.image = [self loadImage: hat.imageName withChecksum: hat.checksum];
+            
+            [images insertObject:hat atIndex: 0];
+        }
     }
     
     return images;
@@ -56,6 +63,18 @@
     NSData * data =  [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:&error];
     
     return [UIImage imageWithData:data];
+}
+
+- (BOOL) imageWithFilename: (NSString *)filename andChecksum: (NSString *)checksum isPresentInImageList: (NSMutableArray *)images {
+    //NSLog(@"checking presence for image with filename %@",filename);
+    for (XmasHat *hat in images){
+        //NSLog(@"hat list entry image %@",hat.imageName);
+        if([hat.imageName isEqualToString: filename] && [hat.checksum isEqualToString: checksum]){
+            NSLog(@"Image with filename %@ already in list!",filename);
+            return true;
+        }
+    }
+    return FALSE;
 }
 
 @end

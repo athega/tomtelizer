@@ -77,7 +77,7 @@
     XmasHat *hat = (XmasHat *)[images objectAtIndex: 0];
     STAssertNotNil(hat, @"expected a XmasHat at first position");
     
-    STAssertEqualObjects(@"1322151563-4162.jpg", 
+    STAssertEqualObjects(@"1322219974-41516.jpg", 
                          hat.imageName, @"expected an url to big image in dto");
     STAssertEqualObjects(@"some-checksum", 
                          hat.checksum, @"expected checksum in dto");
