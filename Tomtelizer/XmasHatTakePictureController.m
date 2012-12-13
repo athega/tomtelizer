@@ -123,12 +123,13 @@
 #pragma mark - HttpBrowserDelegate
 
 - (void)browser: (HttpBrowser *)browser didReceiveBody: (NSString *)body {
-    NSLog(@"browser: didReceiveBody:");
-
-    [self enableCtrls];
+    [self performSelectorOnMainThread:@selector(enableCtrls) withObject:nil waitUntilDone:NO];
 }
 
 - (void)failedToSendData {
+    [self performSelectorOnMainThread:@selector(displayError) withObject:nil waitUntilDone:NO];
+}
+- (void)displayError {
     
     [self enableCtrls];
     

@@ -88,7 +88,8 @@
     
     images = xmasHats;
     
-    //is this overkill? copying all images is rather resource demanding
+    //is this overkill? copying all images is rather resource demanding - locking in
+    //perodicalimageloader anyway.
     //for thread safety we copy the array... maybe better to lock when accessing images
     /*
     NSLock *arrayLock = [[NSLock alloc] init];
