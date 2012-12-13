@@ -85,7 +85,18 @@
 - (void)perodicalImageLoader: (PerodicalImageLoader *)loader didReceiveXmasHats:(NSMutableArray *)xmasHats {
     
     NSLog(@"perodicalImageLoader: didReceiveThumbnailList");
+    
     images = xmasHats;
+    
+    //is this overkill? copying all images is rather resource demanding
+    //for thread safety we copy the array... maybe better to lock when accessing images
+    /*
+    NSLock *arrayLock = [[NSLock alloc] init];
+    [arrayLock lock];
+    images = [[NSMutableArray alloc] initWithArray:xmasHats copyItems:YES];
+    [arrayLock unlock];
+     */
+
     [self performSelectorOnMainThread:@selector(refreshTableView) withObject:nil waitUntilDone:NO];
 }
 - (void) refreshTableView

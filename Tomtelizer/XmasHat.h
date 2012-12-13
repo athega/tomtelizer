@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface XmasHat : NSObject
+@interface XmasHat : NSObject<NSCopying>
  
 //TODO: rename to thumbnail:
 @property (nonatomic, copy) UIImage *image;
