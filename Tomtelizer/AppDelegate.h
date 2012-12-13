@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class XmasHatViewController;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate> {
+    XmasHatViewController * xhvController;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
+- (void) registerXmasHatViewController: (XmasHatViewController *) controller;
 @end

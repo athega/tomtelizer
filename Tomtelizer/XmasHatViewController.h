@@ -12,10 +12,15 @@
 #import "XmasHatDetailsController.h"
 #import "PerodicalImageLoader.h"
 #import "Constants.h"
+@class AppDelegate;
 
-@interface XmasHatViewController : UITableViewController <PerodicalImageLoaderDelegate> 
+@interface XmasHatViewController : UITableViewController <PerodicalImageLoaderDelegate> {
+    PerodicalImageLoader * loader;
+}
 
 @property (nonatomic, strong) NSMutableArray *images;
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
+
+-(void) reloadPerodicalImageLoaderImages;
 
 @end

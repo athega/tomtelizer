@@ -52,7 +52,7 @@
 
     NSString * thumbnailUrl = [NSString stringWithFormat: @"%@%@/%@%@?x=%@",host, uri,thumbPrefix, imageName, checksum];
     
-    NSLog(@"THUMB - %@", thumbnailUrl);
+    //NSLog(@"THUMB - %@", thumbnailUrl);
     
     NSURLRequest *req = [NSURLRequest requestWithURL: [NSURL URLWithString: thumbnailUrl]
                                          cachePolicy: NSURLRequestUseProtocolCachePolicy
@@ -70,7 +70,7 @@
     for (XmasHat *hat in images){
         //NSLog(@"hat list entry image %@",hat.imageName);
         if([hat.imageName isEqualToString: filename] && [hat.checksum isEqualToString: checksum]){
-            NSLog(@"Image with filename %@ already in list!",filename);
+            //NSLog(@"Image with filename %@ already in list!",filename);
             return true;
         }
     }

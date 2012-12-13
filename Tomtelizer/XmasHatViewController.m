@@ -7,6 +7,7 @@
 //
 
 #import "XmasHatViewController.h"
+#import "AppDelegate.h"
 
 //Add reverse to mutable array:
 // http://stackoverflow.com/questions/586370/how-can-i-reverse-a-nsarray-in-objective-c
@@ -55,12 +56,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //solid test environment indeed! since we get a app session
+    //when running unit tests we'll do some damage control here..
 #ifndef TEST
-    PerodicalImageLoader * loader = [PerodicalImageLoader alloc];
+    loader = [PerodicalImageLoader alloc];
     loader.delegate = self;
-    [loader startWorking];
+    [loader initThread];
+    //we need to have a reference to this viewcontroller so we can
+    //turn of and on the loader. it seems resonable that this view owns
+    //the loader since they are connected through a delegate.
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    [appDelegate registerXmasHatViewController: self];
+#endif   
+}
+
+-(void) reloadPerodicalImageLoaderImages {
+#ifndef TEST
+    if(loader!=NULL){
+        //should wrap in method maybe
+        loader.timeToReloadImages = YES;
+    }
 #endif
 }
+
 
 #pragma mark PerodicalImageLoaderDelegate
 
@@ -82,6 +100,7 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    NSLog(@"viewDidUnload!");
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -127,7 +146,7 @@
     XmasHatCell *cell = (XmasHatCell *)[tView dequeueReusableCellWithIdentifier:@"XmasHatCell"];
     
 	XmasHat *hat = [self.images objectAtIndex:indexPath.row];
-    NSLog(@"%@", hat.imageName);
+    //NSLog(@"%@", hat.imageName);
     
     cell.xmasHatImageView.image = hat.image;
     

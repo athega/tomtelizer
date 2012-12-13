@@ -12,37 +12,31 @@
     BOOL isWorking;
     XmlParser *parser;
     ImageLoader *imageLoader;
+    NSThread* myThread;
+    BOOL timeToReloadImages;
 }
 
 @synthesize delegate, images;
 
-- (void) startWorking {
-    
-    NSLog(@" %s",  self.isWorking ? "true" : "false");
 
-    NSLog(@"initializing images array");
-    images = [[NSMutableArray array] init];
+- (void) initThread {
+    NSLog(@"initThread!!");
+    self.isWorking = YES;
     
-    if(!self.isWorking){
-        
-        NSLog(@"Starting thread...");
-        
-        imageLoader = [[ImageLoader alloc] initWithHost: ServerHost
-                                        thumbnailPrefix: ThumbnailPrefix
-                                            imagePrefix: HatifiedImagePrefix 
-                                                    uri: UploadedImagesPath];
-        
-        NSThread* myThread = [[NSThread alloc] initWithTarget:self
-                                                     selector:@selector(doWork)
-                                                       object:nil];
-        
-        self.isWorking = YES;
-        [myThread start];
-    }
+    imageLoader = [[ImageLoader alloc] initWithHost: ServerHost
+                                    thumbnailPrefix: ThumbnailPrefix
+                                        imagePrefix: HatifiedImagePrefix
+                                                uri: UploadedImagesPath];
+    
+    myThread = [[NSThread alloc] initWithTarget:self
+                                       selector:@selector(doWork)
+                                         object:nil];
+    [myThread start];
 }
 
 - (void) stopWorking {
     self.isWorking = NO;
+    NSLog(@"STOP WORKING");
 }
 
 - (void) doWork {
@@ -58,14 +52,21 @@
         parser = [XmlParser alloc];
         [parser loadThumbnailsFromXml:xmlURL toMutableArray: &thumbsToLoad];
         
-        
+        NSLock *arrayLock = [[NSLock alloc] init];
+        [arrayLock lock];
+        if(images==NULL || self.timeToReloadImages){
+            NSLog(@"INFO: initializing images array.");
+            images = [[NSMutableArray array] init];
+            self.timeToReloadImages = NO;
+        }
         images = [imageLoader loadThumbnails:thumbsToLoad toImageArray: images];
-    
+        [arrayLock unlock];
         
         [self.delegate perodicalImageLoader: self didReceiveXmasHats: images];
         
-        [NSThread sleepForTimeInterval: 5];
+        [NSThread sleepForTimeInterval: 2];
     }
+    //[NSThread exit];
     NSLog(@"STOPPING update thread");
 }
 
@@ -81,6 +82,23 @@
     @synchronized(self) {
         if (b != isWorking) {
             isWorking = b;
+        }
+    }
+}
+- (BOOL)timeToReloadImages {
+    NSLog(@"timeToReloadImages getter");
+    BOOL b;
+    @synchronized(self) {
+        b = timeToReloadImages;
+    }
+    return b;
+}
+
+- (void)setTimeToReloadImages:(BOOL)b {
+    NSLog(@"timeToReloadImages setter");
+    @synchronized(self) {
+        if (b != timeToReloadImages) {
+            timeToReloadImages = b;
         }
     }
 }

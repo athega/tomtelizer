@@ -25,12 +25,13 @@
 @property (nonatomic, weak) id <PerodicalImageLoaderDelegate> delegate;
 @property (nonatomic, strong) NSMutableArray *images;
 @property (nonatomic) BOOL isWorking;
+@property (nonatomic) BOOL timeToReloadImages;
 
 
-- (void) startWorking;
 - (void) stopWorking;
+- (void) initThread;
 
-//private
+//private?
 - (void) doWork;
 
 
