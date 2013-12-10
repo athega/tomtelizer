@@ -27,7 +27,7 @@
 //TODO?: cache images
 -(NSMutableArray *) loadThumbnails:(NSArray *)listOfImages toImageArray:(NSMutableArray *) images {
 
-    NSLog(@"images count: %d", [images count]);
+    NSLog(@"images count: %lu", (unsigned long)[images count]);
     for (NSDictionary *elem in listOfImages){
         
         NSString * filename = [elem objectForKey:@"filename"];

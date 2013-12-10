@@ -171,7 +171,8 @@
     NSLog(@"prepareForSegue:");
     
     XmasHatCell *cell = (XmasHatCell *) sender;
-    NSIndexPath *indexPath = [(UITableView *)cell.superview indexPathForCell: cell];
+    //double superview is ios7 specific here:
+    NSIndexPath *indexPath = [(UITableView *)cell.superview.superview indexPathForCell: cell];
     NSLog(@"indexPath: %@", indexPath);
     XmasHat *hat = [images objectAtIndex:indexPath.row];
     

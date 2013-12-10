@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		6B3FDC85148FA04000B9CBD0 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B3FDC84148FA04000B9CBD0 /* MainStoryboard.storyboard */; };
 		6B50C01C148FBA16001549E4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B50C01B148FBA16001549E4 /* icon.png */; };
-		6B9B1CD2167889C000ED9DB4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9B1CD1167889C000ED9DB4 /* Default-568h@2x.png */; };
 		6BBC6AA8149755BA00B9F9CE /* 90deg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF8A66F1490CC9A000EA995 /* 90deg.jpg */; };
 		6BBC6AA9149755BA00B9F9CE /* front-big.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF8A6701490CC9A000EA995 /* front-big.jpg */; };
 		6BBC6AAA149755BA00B9F9CE /* front.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6BF8A6711490CC9A000EA995 /* front.jpg */; };
@@ -73,7 +72,6 @@
 /* Begin PBXFileReference section */
 		6B3FDC84148FA04000B9CBD0 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		6B50C01B148FBA16001549E4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		6B9B1CD1167889C000ED9DB4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6BC3FD7B148F9721004A8EC2 /* Tomtelizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tomtelizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BC3FD7F148F9721004A8EC2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6BC3FD81148F9721004A8EC2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -374,6 +372,11 @@
 			attributes = {
 				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "Athega AB";
+				TargetAttributes = {
+					6BC3FD7A148F9721004A8EC2 = {
+						DevelopmentTeam = 68QV2LAV6D;
+					};
+				};
 			};
 			buildConfigurationList = 6BC3FD75148F9721004A8EC2 /* Build configuration list for PBXProject "Tomtelizer" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -560,11 +563,15 @@
 		6BC3FDA9148F9721004A8EC2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tomtelizer/Tomtelizer-Prefix.pch";
 				INFOPLIST_FILE = "Tomtelizer/Tomtelizer-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -573,12 +580,15 @@
 		6BC3FDAA148F9721004A8EC2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tomtelizer/Tomtelizer-Prefix.pch";
 				INFOPLIST_FILE = "Tomtelizer/Tomtelizer-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -600,6 +610,7 @@
 					"$(PROJECT_DIR)/ocmock/Headers",
 				);
 				INFOPLIST_FILE = "TomtelizerTests/TomtelizerTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/ocmock/\"",
@@ -627,6 +638,7 @@
 					"$(PROJECT_DIR)/ocmock/Headers",
 				);
 				INFOPLIST_FILE = "TomtelizerTests/TomtelizerTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/ocmock/\"",

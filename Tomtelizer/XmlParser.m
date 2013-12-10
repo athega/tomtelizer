@@ -53,7 +53,7 @@
     }
     if ( [elementName isEqualToString:@"images"] ) {
         NSLog(@"DONE!");
-        NSLog(@"%d", [imageNames count]);
+        NSLog(@"%lu", (unsigned long)[imageNames count]);
     }
 }
 

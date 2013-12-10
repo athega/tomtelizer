@@ -19,7 +19,7 @@
     
     CIImage *ciImage = [[CIImage alloc] initWithImage: image];
     NSArray *features = [detector featuresInImage: ciImage];
-    NSLog(@"Number of features detected: %d", [features count]);
+    NSLog(@"Number of features detected: %lu", (unsigned long)[features count]);
     
     NSMutableArray *result = [NSMutableArray array];
     

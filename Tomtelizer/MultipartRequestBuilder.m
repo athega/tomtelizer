@@ -59,7 +59,7 @@
     
     [postData appendData: [[NSString stringWithFormat:@"--%@--\r\n", MPR_BOUNDARY] dataUsingEncoding:NSUTF8StringEncoding]];
     
-    NSLog(@"BYTES len: %d", [postData length]);
+    NSLog(@"BYTES len: %lu", (unsigned long)[postData length]);
     //see test case - this will *occationally* return nil on identical data
     NSLog(@"%@",[NSString stringWithCString: [postData bytes] encoding: NSUTF8StringEncoding]);
     

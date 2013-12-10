@@ -58,7 +58,7 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     
-    NSLog(@"Received %d bytes of data",[imageData length]);
+    NSLog(@"Received %lu bytes of data",(unsigned long)[imageData length]);
     
     UIImage *image = [UIImage imageWithData:imageData];
     xmasHatImageView.image = image;

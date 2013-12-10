@@ -74,7 +74,7 @@
         
         [self disableCtrls];
         
-        NSLog(@"%d", hatModeSegmentedCtrl.selectedSegmentIndex);
+        NSLog(@"%ld", (long)hatModeSegmentedCtrl.selectedSegmentIndex);
         switch (hatModeSegmentedCtrl.selectedSegmentIndex) {
             case 0:
                 processFeatureData = YES;
@@ -88,7 +88,7 @@
         switch (UI_USER_INTERFACE_IDIOM()) {
             case UIUserInterfaceIdiomPhone:
                 //
-                [self presentModalViewController:picker animated:YES];
+                [self presentViewController:picker animated:YES completion:nil];
                 break;
             case UIUserInterfaceIdiomPad:
                 NSLog(@"We're an iPad - must wrap picker in a popover");

@@ -91,7 +91,7 @@ CGContextRef CreateCGBitmapContextForWidthAndHeight( unsigned int width, unsigne
 	return CGBitmapContextCreate( NULL, width, height, 8, 0, colorSpace, alphaInfo );
 }
 
-CGImageRef CreateCGImageFromUIImageScaled( UIImage* image, float scaleFactor )
+CGImageRef CreateCGImageFromUIImageScaled( UIImage* image, CGFloat scaleFactor )
 {
 	CGImageRef			newImage		= NULL;
 	CGContextRef		bmContext		= NULL;

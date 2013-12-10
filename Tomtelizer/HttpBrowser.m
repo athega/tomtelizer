@@ -70,7 +70,7 @@ int const NUM_SLEEP_SECONDS = 5;
     NSArray * features = [featureFinder getFeaturesFromImage: scaled];
  
     NSData* imagedata = UIImageJPEGRepresentation(scaled, 1.0);
-    NSLog(@"Image size: %d", imagedata.length);
+    NSLog(@"Image size: %lu", (unsigned long)imagedata.length);
     
     NSLog(@"making actual request to url: <%@>", urlStr);
     
