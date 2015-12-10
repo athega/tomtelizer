@@ -10,7 +10,9 @@
 
 //#define SERVER_HOST @"http://10.0.0.90:3000"
 
-//#define SERVER_HOST @"http://0.0.0.0:3000"
+// #define SERVER_HOST @"http://0.0.0.0:8088"
+
+//#define SERVER_HOST @"http://10.0.1.9:8088"
 
 #define SERVER_HOST @"http://tomtelizer.athega.se"
 

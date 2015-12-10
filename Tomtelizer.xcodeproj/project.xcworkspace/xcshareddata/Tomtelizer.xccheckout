@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>77AA18CE-024B-4866-BB0E-959D779747D2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Tomtelizer</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>98906CDF-BC8E-4D52-AE7C-88C5B25589AD</key>
+		<string>https://github.com/athega/tomtelizer.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Tomtelizer.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>98906CDF-BC8E-4D52-AE7C-88C5B25589AD</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/athega/tomtelizer.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>98906CDF-BC8E-4D52-AE7C-88C5B25589AD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>98906CDF-BC8E-4D52-AE7C-88C5B25589AD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>tomtelizer</string>
+		</dict>
+	</array>
+</dict>
+</plist>

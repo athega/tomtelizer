@@ -64,7 +64,7 @@
         
         [self.delegate perodicalImageLoader: self didReceiveXmasHats: images];
         
-        [NSThread sleepForTimeInterval: 15];
+        [NSThread sleepForTimeInterval: 5];
     }
     //[NSThread exit];
     NSLog(@"STOPPING update thread");
